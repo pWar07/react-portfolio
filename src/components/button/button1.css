@@ -1,0 +1,38 @@
+.button1 {
+  position: relative;
+  overflow: hidden;
+}
+
+.button1 h4 {
+  position: relative; /* Ensure h4 is positioned relative to button1 */
+  color: black;
+  z-index: 9; /* Ensure h4 is above the pseudo-element */
+  transition: color ease 0.4s; /* Add a transition for color change */
+}
+
+.button1:hover h4 {
+  color: #fff;
+}
+
+.button1::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  left: 0;
+  bottom: -100%;
+  border-radius: 50%;
+  transition: all ease 0.4s;
+  z-index: 1; /* Ensure the pseudo-element is below the h4 */
+}
+
+.button1:hover::after {
+  bottom: 0;
+  border-radius: 0;
+}
+
+.button1:hover .rotate {
+  transition: all 0.4s linear;
+  transform: rotate(45deg);
+}

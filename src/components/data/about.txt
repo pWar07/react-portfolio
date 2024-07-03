@@ -1,0 +1,175 @@
+import prof from "../assets/images/profile1.jpg";
+import { motion } from "framer-motion";
+import { Button1 } from "./button/Button1";
+
+export const About = () => {
+  const images = [
+    { src: prof, rotation: "-5deg" },
+    { src: prof, rotation: "3deg" },
+    { src: prof, rotation: "-7deg" },
+    { src: prof, rotation: "2deg" },
+    { src: prof, rotation: "-4deg" },
+  ];
+
+  return (
+    <div className="w-full h-[135vh] flex justify-center items-center bg-[#F1F1F1]">
+      <div className="w-full h-full w-4xl py-20 rounded-3xl bg-white shadow-xl">
+        <div className="px-20 capitalize border-b-[1px] pb-10 border-zinc-500 font-['neue']">
+          <h1 className="text-6xl tracking-tight">About Me</h1>
+        </div>
+        <div className="px-60 relative">
+          <div className="relative flex mt-20 px-20 w-full">
+            {images.map((image, index) => (
+              <div className="imgCont w-1/2">
+                <motion.img
+                  key={index}
+                  src={image.src}
+                  alt={`Image ${index + 1}`}
+                  className="absolute top-0 left-0 w-1/3 h-auto transform transition-transform duration-300 ease-in-out rounded-lg"
+                  style={{
+                    transform: `rotate(${image.rotation})`,
+                  }}
+                />
+              </div>
+            ))}
+            <div className="w-1/2 flex flex-col items-center space-x-2 font-['neue'] text-inherit justify-center absolute right-0">
+              <p className="text-xl font-['neue'] mb-10">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <div className="btn">
+                <Button1 value="More Photos" />
+              </div>
+            </div>
+          </div>
+          <div className="techStack absolute">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus,
+              dolores?
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About number 2
+
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Button1 } from './button/Button1';
+
+export const About = () => {
+  const images = [
+    { src: 'https://images.pexels.com/photos/20643866/pexels-photo-20643866/free-photo-of-modern-skyscraper-building.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load', rotation: '-5deg' },
+    { src: 'https://images.pexels.com/photos/8259263/pexels-photo-8259263.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load', rotation: '3deg' },
+    { src: 'https://images.pexels.com/photos/26442630/pexels-photo-26442630/free-photo-of-a-row-of-empty-seats-in-a-stadium.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load', rotation: '-7deg' },
+    { src: 'https://images.pexels.com/photos/23638650/pexels-photo-23638650/free-photo-of-default.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load', rotation: '2deg' },
+    { src: 'https://images.pexels.com/photos/11163069/pexels-photo-11163069.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load', rotation: '-4deg' },
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const handleChangePhoto = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  return (
+    <div className="w-full h-[150vh] py-20 rounded-3xl bg-[#b3b3b3]">
+      <div className="w-full px-20 capitalize border-b-[1px] pb-10 border-zinc-500 font-['neue']">
+        <h1 className="text-6xl tracking-tight">About Me</h1>
+      </div>
+      <div className="px-20">
+        <div className="container flex gap-10 w-full mt-10">
+          <div className="left w-1/2 h-full">
+            {images.map((image, index) => (
+              <div className="imgCont relative" key={index}>
+                <motion.img
+                  src={image.src}
+                  alt={`Image ${index + 1}`}
+                  className="absolute right-20 top-10 w-[20em] h-[25em] object-cover transform transition-transform duration-300 ease-in-out rounded-lg"
+                  style={{
+                    transform: `rotate(${image.rotation})`,
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+          <div className="right w-1/2 flex flex-col items-center font-['neue'] text-inherit justify-center absolute right-0 pt-20 pr-60">
+            <p className="text-xl font-['neue'] mb-10">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <div className="btn">
+              <Button1 value="More Photos" onClick={handleChangePhoto} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
+
+
+
+
+
+
+<div className="px-[200px] pt-10 flex flex-col items-center gap-[30px] justify-center">
+        {Edu.map((v, i) => {
+          let Calend = v.cal;
+          return (
+            // ${i % 2 === 0 ? "hover:-ml-[200px]" : "hover:-mr-[200px]"}
+            <div
+              className={`relative card border-[1px] border-zinc-900 rounded-xl min-w-[650px] p-8 duration-1000 transition-all`}
+            >
+              <div className="header gap-6 flex items-center">
+                <img
+                  alt=""
+                  className="w-20 h-20 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${v.icon})` }}
+                />
+                <div className="content">
+                  <h1 className='text-xl font-["neue"]'>{v.name}</h1>
+                  <h1 className="text-sm font-['neue'] text-zinc-700">
+                    {v.stream}
+                  </h1>
+                  <h1 className="text-sm flex items-center gap-1 font-['neue'] text-zinc-700">
+                    <Calend />
+                    {v.date}
+                  </h1>
+                  <h1 className="text-md text-zinc-700 font-['neue']">
+                    CGPA : {v.cgpa}
+                  </h1>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>

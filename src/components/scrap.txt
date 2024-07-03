@@ -1,0 +1,5 @@
+px-[100px] lg:px-[200px] block justify-between items-center lg:flex
+
+<h1 className="capitalize leading-[30px] text-[65px] mb-4 lg:leading-[75px] lg:mb-7 lg:tracking-tight lg:text-[9.5vw]">
+
+<div className="textStr pt-40 lg:px-[200px] lg:items-center lg:justify-between lg:flex px-10">

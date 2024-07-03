@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: founder;
+  src: url(../src/assets/fonts/FoundersGrotesk-Semibold.ttf);
+}
+
+@font-face {
+  font-family: neue;
+  src: url(../src/assets/fonts/NeueMontreal-Regular.ttf);
+}
+
+@import "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css";
+
+@layer components {
+  .timeline::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: #3f3f46;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .leftArrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 34px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #E6E3E6;
+    right: -14px;
+  }
+
+  .rightArrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 34px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #E6E3E6;
+    left: -14px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .timeline::after {
+    left: 55px;
+  }
+  .contain {
+    width: 100%;
+    padding-left: 90px;
+    padding-right: 25px;
+  }
+  .textBox {
+    font-size: 13px;
+  }
+  .textBox small {
+    margin-bottom: 10px;
+  }
+  .leftArrow,
+  .rightArrow {
+    border-right: 15px solid #E6E3E6;
+    border-left: 0;
+    left: -13px;
+  }
+  .contain img {
+    left: 42px;
+  }
+}
